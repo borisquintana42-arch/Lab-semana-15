@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- BorderPane divide la ventana en zonas: left (barra lateral) y center (el chat).
+     fx:controller conecta este diseño con la clase Java que lo controla.
+     El aspecto está en discord.css; aquí solo se asignan clases con styleClass. -->
+<BorderPane styleClass="app-root" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="cr.ac.una.est.minidiscord.presentation.controller.ChatViewController">
+
+    <left>
+        <HBox>
+            <!-- Columna angosta de servidores, como en Discord -->
+            <VBox styleClass="server-rail">
+                <Label text="MD" styleClass="server-icon"/>
+            </VBox>
+
+            <!-- Lista de canales y panel del usuario -->
+            <VBox styleClass="channel-panel">
+                <Label text="Mini-Discord UNA" styleClass="channel-panel-header" maxWidth="Infinity"/>
+
+                <VBox styleClass="channel-list" VBox.vgrow="ALWAYS">
+                    <Label text="# general" styleClass="channel-item, channel-item-selected" maxWidth="Infinity"/>
+                </VBox>
+
+                <HBox styleClass="user-panel">
+                    <StackPane fx:id="userAvatarHolder"/>
+                    <VBox styleClass="user-info">
+                        <Label fx:id="userNameLabel" styleClass="user-name"/>
+                        <Label text="En línea" styleClass="user-status"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </HBox>
+    </left>
+
+    <center>
+        <VBox styleClass="chat-area">
+            <HBox styleClass="chat-header">
+                <Label text="#" styleClass="chat-hash"/>
+                <Label text="general" styleClass="chat-title"/>
+            </HBox>
+
+            <!-- fx:id le da un nombre al elemento para usarlo desde el controller -->
+            <ListView fx:id="messageListView" styleClass="message-list" VBox.vgrow="ALWAYS"/>
+
+            <!-- Franja roja para errores; el controlador la muestra solo cuando hay un mensaje -->
+            <Label fx:id="statusLabel" styleClass="status-label" maxWidth="Infinity"/>
+
+            <HBox styleClass="input-area">
+                <HBox styleClass="message-input-box" HBox.hgrow="ALWAYS">
+                    <!-- onAction dice qué método del controller se ejecuta.
+                         En un TextField es al presionar Enter. -->
+                    <TextField fx:id="messageInputField" styleClass="message-input"
+                               promptText="Enviar mensaje a #general"
+                               HBox.hgrow="ALWAYS" onAction="#handleSendMessage"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

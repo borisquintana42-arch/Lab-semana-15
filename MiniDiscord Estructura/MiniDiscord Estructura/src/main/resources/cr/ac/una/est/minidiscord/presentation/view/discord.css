@@ -1,0 +1,271 @@
+/* Paleta (colores del tema oscuro de Discord)
+   #1e1f22  columna de servidores / fondo del campo de texto de los diálogos
+   #232428  panel del usuario
+   #2b2d31  panel de canales
+   #313338  área del chat
+   #383a40  caja de entrada de mensajes
+   #dbdee1  texto principal        #949ba4  texto secundario
+   #5865f2  azul principal         #f23f42  error */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
+}
+
+.app-root {
+    -fx-background-color: #313338;
+}
+
+/* Columna de servidores */
+
+.server-rail {
+    -fx-background-color: #1e1f22;
+    -fx-min-width: 72;
+    -fx-pref-width: 72;
+    -fx-padding: 12 0 0 0;
+    -fx-alignment: TOP_CENTER;
+}
+
+.server-icon {
+    -fx-background-color: #5865f2;
+    -fx-background-radius: 16;
+    -fx-min-width: 48;
+    -fx-min-height: 48;
+    -fx-alignment: CENTER;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+/* Panel de canales */
+
+.channel-panel {
+    -fx-background-color: #2b2d31;
+    -fx-min-width: 240;
+    -fx-pref-width: 240;
+}
+
+.channel-panel-header {
+    -fx-min-height: 48;
+    -fx-padding: 0 16 0 16;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+    -fx-border-color: #1f2023;
+    -fx-border-width: 0 0 1 0;
+}
+
+.channel-list {
+    -fx-padding: 12 8 0 8;
+}
+
+.channel-item {
+    -fx-padding: 6 8 6 8;
+    -fx-background-radius: 4;
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 15px;
+}
+
+.channel-item-selected {
+    -fx-background-color: #404249;
+    -fx-text-fill: white;
+}
+
+/* Panel del usuario */
+
+.user-panel {
+    -fx-background-color: #232428;
+    -fx-min-height: 52;
+    -fx-padding: 0 8 0 8;
+    -fx-spacing: 8;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.user-info {
+    -fx-alignment: CENTER_LEFT;
+}
+
+.user-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.user-status {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+}
+
+/* Área del chat */
+
+.chat-area {
+    -fx-background-color: #313338;
+}
+
+.chat-header {
+    -fx-min-height: 48;
+    -fx-padding: 0 16 0 16;
+    -fx-spacing: 8;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #26272b;
+    -fx-border-width: 0 0 1 0;
+}
+
+.chat-hash {
+    -fx-text-fill: #80848e;
+    -fx-font-size: 20px;
+}
+
+.chat-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+/* Lista de mensajes */
+
+.message-list {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 8 0 8 0;
+}
+
+.message-list:focused {
+    -fx-background-color: transparent;
+}
+
+.message-list .list-cell,
+.message-list .list-cell:odd,
+.message-list .list-cell:filled:selected,
+.message-list .list-cell:filled:selected:focused {
+    -fx-background-color: transparent;
+    -fx-padding: 6 16 6 16;
+}
+
+.message-list .list-cell:filled:hover {
+    -fx-background-color: #2e3035;
+}
+
+.message-author {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 15px;
+}
+
+.message-time {
+    -fx-text-fill: #949ba4;
+    -fx-font-size: 11px;
+}
+
+.message-content {
+    -fx-text-fill: #dbdee1;
+    -fx-font-size: 15px;
+}
+
+/* Barra de desplazamiento delgada y oscura */
+.message-list .scroll-bar:vertical {
+    -fx-background-color: transparent;
+    -fx-pref-width: 12;
+}
+
+.message-list .scroll-bar .track {
+    -fx-background-color: #2b2d31;
+    -fx-background-radius: 8;
+    -fx-border-color: transparent;
+}
+
+.message-list .scroll-bar .thumb {
+    -fx-background-color: #1a1b1e;
+    -fx-background-radius: 8;
+    -fx-background-insets: 2;
+}
+
+.message-list .scroll-bar .increment-button,
+.message-list .scroll-bar .decrement-button {
+    -fx-padding: 0;
+    -fx-pref-height: 0;
+    -fx-pref-width: 0;
+}
+
+.message-list .scroll-bar .increment-arrow,
+.message-list .scroll-bar .decrement-arrow {
+    -fx-padding: 0;
+    -fx-shape: " ";
+}
+
+/* Errores */
+
+.status-label {
+    -fx-background-color: #f23f42;
+    -fx-text-fill: white;
+    -fx-padding: 6 16 6 16;
+    -fx-wrap-text: true;
+}
+
+/* Caja de entrada */
+
+.input-area {
+    -fx-padding: 8 16 24 16;
+}
+
+.message-input-box {
+    -fx-background-color: #383a40;
+    -fx-background-radius: 8;
+    -fx-padding: 4 12 4 12;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.message-input {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-text-fill: #dbdee1;
+    -fx-prompt-text-fill: #6d6f78;
+    -fx-highlight-fill: #5865f2;
+    -fx-font-size: 15px;
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+.message-input:focused {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+/* Diálogo de nombre de usuario */
+
+.dialog-pane {
+    -fx-background-color: #313338;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #2b2d31;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content.label {
+    -fx-text-fill: #dbdee1;
+}
+
+.dialog-pane .text-field {
+    -fx-background-color: #1e1f22;
+    -fx-text-fill: #dbdee1;
+    -fx-background-radius: 4;
+}
+
+.dialog-pane > .button-bar > .container {
+    -fx-background-color: #2b2d31;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #5865f2;
+    -fx-text-fill: white;
+    -fx-background-radius: 4;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #4752c4;
+}
